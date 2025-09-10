@@ -1,9 +1,8 @@
-import jh61b.utils.Reflection;
-import org.junit.jupiter.api.DisplayName;
+import deque.Deque61B;
+import deque.LinkedListDeque61B;
 import org.junit.jupiter.api.Test;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.common.truth.Truth.assertWithMessage;
 
 /** Performs some basic linked list tests. */
 public class LinkedListDeque61BTest {
@@ -121,5 +120,33 @@ public class LinkedListDeque61BTest {
         assertThat(test.getRecursive(2)).isEqualTo(1);
         assertThat(test.getRecursive(3)).isEqualTo(3);
         assertThat(test.getRecursive(1111)).isEqualTo(null);
+    }
+
+    @Test
+    public void IteratorTest() {
+         Deque61B<Integer> test = new LinkedListDeque61B<>();
+        test.addFirst(1);
+        test.addLast(2);
+        test.addFirst(3);
+        test.addFirst(4);
+        test.addLast(5);
+        assertThat(test).containsExactly(4, 3, 1, 2, 5);
+    }
+
+    @Test
+    public void equalsTest() {
+         Deque61B<Integer> test1 = new LinkedListDeque61B<>();
+         Deque61B<Integer> test2 = new LinkedListDeque61B<>();
+         test1.addFirst(1);
+         test2.addLast(1);
+         assertThat(test1.equals(test2)).isTrue();
+    }
+
+    @Test
+    public void toStringTest() {
+         Deque61B<Integer> test = new LinkedListDeque61B<>();
+         test.addFirst(1);
+         test.addLast(1);
+         System.out.println(test);
     }
 }

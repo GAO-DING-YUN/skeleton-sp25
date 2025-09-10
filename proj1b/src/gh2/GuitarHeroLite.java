@@ -39,7 +39,6 @@ public class GuitarHeroLite {
                     StdDraw.clear();
                     StdDraw.text(WIDTH / 2, HEIGHT / 2, "C");
                     StdDraw.show();
-
                     stringC.pluck();
                 }
             }
