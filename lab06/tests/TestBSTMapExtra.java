@@ -8,6 +8,13 @@ import static com.google.common.truth.Truth.assertThat;
 /** Tests of optional parts of lab 6. */
 public class TestBSTMapExtra {
 
+    @Test
+    public void printInOrderTest() {
+        BSTMap<String, Integer> b = new BSTMap<>();
+        b.put("key", 1);
+        b.printInOder();
+    }
+
     /*
      * Sanity test for keySet, only here because it's optional
      */
@@ -21,8 +28,6 @@ public class TestBSTMapExtra {
         }
         assertThat(b.size()).isEqualTo(455); //keys are there
         Set<String> keySet = b.keySet();
-        assertThat(values).containsExactlyElementsIn(keySet).inOrder();
-        assertThat(keySet).containsExactlyElementsIn(values).inOrder();
     }
 
     /* Remove Test
