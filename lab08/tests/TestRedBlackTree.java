@@ -321,6 +321,8 @@ public class TestRedBlackTree {
         // root
         assertThat(rbtree.root).isNotNull();
         assertThat(rbtree.root.isBlack).isTrue();
+
+
         assertThat(rbtree.root.item).isEqualTo(5);
 
         // left
